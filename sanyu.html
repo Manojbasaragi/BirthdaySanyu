@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday</title>
+    <style>
+      body {
+        background-color: black;
+        overflow: hidden;
+        margin: 0;
+        height: 100vh;
+      }
+      #box {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+      }
+      h1 {
+        color: white;
+        font-size: 100px;
+        animation: sanyu 2s infinite;
+        transition: transform 4s;
+      }
+      h1:hover {
+        transform: translate(0, 200px);
+      }
+      @keyframes sanyu {
+        0% {
+          color: red;
+        }
+        30% {
+          color: cyan;
+        }
+        60% {
+          color: greenyellow;
+        }
+        100% {
+          color: rgb(249, 82, 221);
+        }
+      }
+      h3 {
+        font-size: 40px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      button {
+        width: 180px;
+        height: 80px;
+        background-color: aqua;
+        font-size: 20px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        border-radius: 30px;
+        cursor: pointer;
+      }
+      .balloon {
+        width: 50px;
+        height: 70px;
+        background-color: red;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -100px;
+        animation: floatUp 5s linear infinite;
+      }
+      @keyframes floatUp {
+        0% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-110vh);
+          opacity: 0;
+        }
+      }
+      #wi {
+       
+        width: 90%;
+        max-width: 600px;
+        max-height: 200px;
+        overflow-y: auto; 
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px;
+        color: white;
+        word-wrap: break-word;
+        scrollbar-width: none;
+      }
+      #wi::-webkit-scrollbar {
+        display: none; /* Hides scrollbar in Chrome, Safari, Edge */
+      }
+
+      @media (max-width: 600px) {
+        #wi {
+          max-height: 150px;
+          font-size: 4vw;
+        }
+        h1 {
+          font-size: 10vw;
+        }
+        h3 {
+          font-size: 6vw;
+          width: 70%;
+        }
+        button {
+          font-size: 5vw;
+          height: 50px;
+          width: 70%;
+        }
+        .balloon {
+          width: 30px;
+          height: 50px;
+        }
+      }
+    </style>
+  </head>
+  <body id="parent">
+    <div id="box">
+      <h1>Happy Birthday Sanyukta</h1>
+      <div id="wi">
+        <h3 id="wishes"></h3>
+        <h3 id="name"></h3>
+      </div>
+      <br />
+      <button onclick="wish()">Birthday Wishes</button>
+    </div>
+    <script>
+      var i = 0;
+      function getRandomColor() {
+        let letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+      function wish() {
+        let arr = [
+          "Happy Birthday, Akka! You are amazing!,Wishing you joy and happiness!,Have a fantastic day!,Cheers to another wonderful year!,Stay blessed and keep shining!",
+          "Hey beautiful, it's an amazing moment for you turning into the 27th born day as it's a auspicious day for you, we are very happy to see that beautiful, blushing smile on your face. We just wish you will get all the blessings from the elders and all chotu motu sa funny less more affectionate and moments of joy with us people.Spending the funniest, happiest moments from each single headache to hapiness thank you being the warden Wish you many many happy returns of the day Ms beautiful Sanyukta madam.",
+          "A new year of exciting adventures is ahead! Embrace it with joy and celebration on your special day. Wishing you a fantastic and fun-filled birthday Sanyu🎂🎂🎂",
+          "Happy Birthday to an incredible soul who lights up every room with energy, warmth, and kindness! You uplift, guide, and care for everyone in the most inspiring way. Your support and leadership make the world brighter. May your day be as joyful and fulfilling as the positivity you bring. Wishing you endless happiness, success, and wonderful moments ahead!",
+          "Happy Birthday 🎁 to the cutest, smartest, sweetest and most adorable friend. Keep up your hard work and great effort 💪💯😎",
+          "A many more happy returns of the day to.... A dancer, A panipuri loverA person who hate the spicy food(dinner) but not the spicy snakes and panipuri,  A person... whose presence is there everywhere. Once again happy birthday to you😇",
+          "Wishing you a fantastic day filled with joy, laughter, and all the happiness you bring to those around you!",
+          "Wishing you a day as amazing and bright as you are! May your birthday be filled with laughter, love, and all the happiness...",
+          "Happy Birthday 🎈🎂 sanyukta stay happy always 🎉✨✌🏻",
+        ];
+      
+        if (i == 9) {
+          i = 0;
+        }
+        let wish = document.getElementById("wishes");
+        wish.innerHTML = arr[i];
+
+        wish.style.color = getRandomColor();
+        document.getElementById("parent").style.backgroundColor =
+          getRandomColor();
+        if (i === 0) {
+          document.getElementById("name").innerHTML = "-Jashua";
+        } else if (i === 1) {
+          document.getElementById("name").innerHTML = "-Anubha";
+        } else if (i === 2) {
+          document.getElementById("name").innerHTML = "-Lipsa";
+        } else if (i === 3) {
+          document.getElementById("name").innerHTML = "-Govinthan";
+        } else if (i === 4) {
+          document.getElementById("name").innerHTML = "-Kiran Sir";
+        } else if (i === 5) {
+          document.getElementById("name").innerHTML = "-Manoj";
+        } else if (i === 6) {
+          document.getElementById("name").innerHTML = "-Bhabani";
+        } else if (i === 7) {
+          document.getElementById("name").innerHTML = "-Sujoy";
+        } else {
+          document.getElementById("name").innerHTML = "-Jyoti";
+        }
+        i++;
+      }
+      function createBalloon() {
+        let balloon = document.createElement("div");
+        balloon.className = "balloon";
+        balloon.style.backgroundColor = getRandomColor();
+        balloon.style.left = Math.random() * window.innerWidth + "px";
+        balloon.style.animationDuration = 3 + Math.random() * 3 + "s";
+        document.body.appendChild(balloon);
+        setTimeout(() => {
+          balloon.remove();
+        }, 5000);
+      }
+      setInterval(createBalloon, 500);
+    </script>
+  </body>
+</html>
